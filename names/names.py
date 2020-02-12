@@ -1,4 +1,3 @@
-import collections
 import time
 
 from binary_search_tree import BinarySearchTree
@@ -15,7 +14,7 @@ f.close()
 
 duplicates = []
 
-# This solution is On^2
+# This solution is O(n^2)
 # for name_1 in names_1:
 #     for name_2 in names_2:
 #         if name_1 == name_2:
@@ -23,7 +22,7 @@ duplicates = []
 
 ### New solution ###
 # runtime: 0.0747992992401123 seconds
-# This solution is O(n) b/c you have to loop through both names lists 1 time.
+# This solution is O(n log n) b/c you have to loop through both names lists 1 time.
 # create a BST
 bst = BinarySearchTree(names_1[0])
 for i in range(1, len(names_1)):
@@ -43,3 +42,8 @@ print(f"runtime: {end_time - start_time} seconds")
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish with no restrictions on techniques or data
 # structures?
+
+# for name in names_2:
+#     # if name is in names_set append it to dups
+#     if name in names_set:
+#         duplicates.append(name)
